@@ -1,4 +1,11 @@
 #data created by Signal-Server 
+src/*.o
+src/signalserver
+src/signalserverHD
+src/signalserverLIDAR
+signalserver
+signalserverHD
+signalserverLIDAR
 tests/*
 
 # height data
