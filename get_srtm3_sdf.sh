@@ -10,7 +10,7 @@ srtm2sdfDir="utils/sdf/"
 #north bounds of height data to download
 for north in {44..55}
 do
-	#east bounds of height data to downloaded 
+	#east bounds of height data to download
 	for east in {010..019}
 	do
 	wget "${url}N${north}E$east.hgt.zip" -P $srtm3Dir
