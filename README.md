@@ -1,4 +1,7 @@
 # Signal Server
+
+[![C/C++ CI](https://github.com/lmux/Signal-Server/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/lmux/Signal-Server/actions/workflows/c-cpp.yml)
+
 Multi-threaded radio propagation simulator based upon SPLAT! by Alex Farrant QCVS, 2E0TDW. 
 
 SPLAT! Project started in 1997 by John A. Magliacane, KD2BD
