@@ -39,11 +39,12 @@ double version = 3.21;
 #include "models/pel.hh"
 #include "image.hh"
 
-int MAXPAGES = 10*10;
+int MAXPAGES = 10*10*10;
 int IPPD = 1200;
 int ARRAYSIZE = (MAXPAGES * IPPD) + 10;
 
-char sdf_path[255], opened = 0, gpsav = 0, ss_name[16], dashes[80], *color_file = NULL;
+char sdf_path[255], gpsav = 0, udt_file[255], ss_name[16], *color_file = NULL;
+
 
 double earthradius, max_range = 0.0, forced_erp, dpp, ppd, yppd,
     fzone_clearance = 0.6, forced_freq, clutter, lat, lon, txh, tercon, terdic,
@@ -1165,7 +1166,7 @@ int main(int argc, char *argv[])
 	fzone_clearance = 0.6;
 	contour_threshold = 0;
 	resample = 0;
-
+	
 	ano_filename[0] = 0;
 	earthradius = EARTHRADIUS;
 	max_range = 1.0;
@@ -2034,13 +2035,16 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "|%.6f", tx_site[0].lat+cropLat);
 			fprintf(stderr, "|%.6f", tx_site[0].lon+cropLon);
 			fprintf(stderr, "|%.6f", tx_site[0].lat-cropLat);
-			fprintf(stderr, "|%.6f|",tx_site[0].lon-cropLon);
+			fprintf(stderr, "|%.6f",tx_site[0].lon-cropLon);
 		} else {
 			fprintf(stderr, "|%.6f", max_north);
 			fprintf(stderr, "|%.6f", east);
 			fprintf(stderr, "|%.6f", min_north);
-			fprintf(stderr, "|%.6f|",west);
+			fprintf(stderr, "|%.6f",west);
 		}
+		fprintf(stderr, "|%.6f", tx_site[0].lat);
+		fprintf(stderr, "|%.6f", tx_site[0].lon);
+		fprintf(stderr, "|%s|", mapfile);
 		fprintf(stderr, "\n");
 
 	} else {
